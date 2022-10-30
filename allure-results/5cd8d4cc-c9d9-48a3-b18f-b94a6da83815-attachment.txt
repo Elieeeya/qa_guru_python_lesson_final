@@ -1,1 +1,0 @@
-{'method': '/items/select', 'status': 'ok', 'result': [{'last_id': '590', 'sizes': None, 'colors': None, 'title': 'Легкое платье', 'price': '2999', 'image': None, 'photos': None, 'category': '5', 'description': 'Из старой коллекции!', 'sort': None, '_lng': None, 'action': None, 'enable': '1', 'params': 'dress'}]}
