@@ -1,0 +1,1 @@
+{'method': '/items/update', 'status': 'ok', 'result': 'Товар обновлен!'}
