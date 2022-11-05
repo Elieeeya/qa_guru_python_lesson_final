@@ -1,0 +1,1 @@
+{'method': '/items/create', 'status': 'ok', 'result': {'id': '480', 'name': 'Спортивные шорты', 'section': 'Верхняя одежда', 'description': 'Из новой коллекции!', 'color': 'RED', 'price': 1999, 'params': 'dress'}}

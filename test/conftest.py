@@ -1,16 +1,24 @@
-import pytest
 import requests
 import allure
 import logging
 import curlify
 import os
+import allure_commons
+import pytest
 
-from utils.sessions import api
+import time
+from selene.support.shared import browser
+from selene import support
+from appium import webdriver
+from util.sessions import api
 from selene.support.shared import browser
 from dotenv import load_dotenv
-from utils import attach
+from util import attach
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+
+
+from resources.schemas.model_scheme import *
 
 
 @pytest.fixture(scope='session', autouse=True)
@@ -30,11 +38,6 @@ def browser_management():
     browser.config.window_height = 1080
 
 
-@pytest.fixture(scope='session', autouse=True)
-def load_env():
-    load_dotenv()
-
-
 @pytest.fixture(scope='function')
 def setup_browser():
     options = Options()
@@ -48,8 +51,8 @@ def setup_browser():
     }
     options.capabilities.update(selenoid_capabilities)
 
-    login = os.getenv('LOGIN')
-    password = os.getenv('PASSWORD')
+    login = os.getenv('LOGIN_WEB')
+    password = os.getenv('PASSWORD_WEB')
 
     driver = webdriver.Remote(
         command_executor=f"https://{login}:{password}@selenoid.autotests.cloud/wd/hub",
@@ -68,3 +71,5 @@ def browser_settings():
     browser.config.base_url = 'https://www.bmw.ru/'
     browser.config.window_width = 1920
     browser.config.window_height = 1080
+
+
